@@ -3,15 +3,12 @@ from PIL import Image
 import numpy as np
 import pickle
 from skimage.transform import resize
-# from tensorflow.keras.models import load_model
 
 
 # Define categories
 categories = ['Organic', 'Recycle']
 
 # Load the trained model
-# model = load_model("model.p")
-# model.summary()
 with open("model.p", 'rb') as f:
     model = pickle.load(f)
 
