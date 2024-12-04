@@ -4,7 +4,6 @@ import numpy as np
 import pickle
 import gdown
 import os
-import cv2
 import tensorflow as tf
 
 # Define categories
