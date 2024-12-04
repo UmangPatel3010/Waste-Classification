@@ -2,9 +2,10 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import pickle
-from skimage.transform import resize
+# from skimage.transform import resize
 import gdown
 import os
+import cv2
 
 # Define categories
 categories = ['Organic', 'Recycle']
@@ -34,7 +35,9 @@ if uploaded_file is not None:
 
     if col2.button("Classify"):
         image = np.array(image)
-        image = resize(image, (50, 50, 3))  # Resize image to match model input
+        # image = resize(image, (50, 50, 3))  # Resize image to match model input
+        image = cv2.resize(image, (50, 50))
+        # image = np.array(image)
         image = np.expand_dims(image, axis=0)  # Add batch dimension
 
         prediction = model.predict(image)
