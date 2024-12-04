@@ -5,6 +5,7 @@ import pickle
 import gdown
 import os
 import cv2
+import tensorflow as tf
 
 # Define categories
 categories = ['Organic', 'Recycle']
@@ -34,9 +35,7 @@ if uploaded_file is not None:
 
     if col2.button("Classify"):
         image = np.array(image)
-        # image = resize(image, (50, 50, 3))  # Resize image to match model input
-        image = cv2.resize(image, (50, 50))
-        # image = np.array(image)
+        image = tf.image.resize(image, [50, 50])
         image = np.expand_dims(image, axis=0)  # Add batch dimension
 
         prediction = model.predict(image)
