@@ -3,17 +3,23 @@ from PIL import Image
 import numpy as np
 import pickle
 from skimage.transform import resize
-
+import gdown
+import os
 
 # Define categories
 categories = ['Organic', 'Recycle']
 
+url = "https://drive.google.com/file/d/1szLBFHmsyTDOCAFgo_YGecyAebmmsJJx/view?usp=sharing"
+output = "model.p"  # Local filename to save the file as
+if not os.path.exists("model.p"):
+    gdown.download(url, output, fuzzy=True)
+
 # Load the trained model
-with open("model.p", 'rb') as f:
+with open(output, 'rb') as f:
     model = pickle.load(f)
 
 # Streamlit UI
-st.set_page_config(page_title="Waste Classification",layout="wide", page_icon="./favicon.png")
+st.set_page_config(page_title="Waste Classification", layout="wide", page_icon="./favicon.png")
 st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
 st.title(":green[Waste Classification App]")
 
