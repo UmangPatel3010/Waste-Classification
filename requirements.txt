@@ -1,6 +1,6 @@
 pip==24.3.1
 scikit-learn==0.24.0
-numpy=1.26.4
+numpy==1.26.4
 altair ==5.5.0
 attrs==24.2.0
 blinker==1.9.0
