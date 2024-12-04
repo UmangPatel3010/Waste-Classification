@@ -1,6 +1,6 @@
 pip==24.3.1
 pipwin==0.3.1
-scikit-learn==0.24.0
+opencv-python==4.10.0.84
 numpy==1.26.4
 altair==5.5.0
 attrs==24.2.0
