@@ -19,7 +19,7 @@ with open(output, 'rb') as f:
     model = pickle.load(f)
 
 # Streamlit UI
-st.set_page_config(page_title="Waste Classification", layout="wide", page_icon="./favicon.png")
+st.set_page_config(page_title="Waste Classification", layout="wide")
 st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
 st.title(":green[Waste Classification App]")
 
